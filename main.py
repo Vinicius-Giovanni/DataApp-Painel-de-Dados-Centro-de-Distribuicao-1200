@@ -1,6 +1,12 @@
-def main():
-    print("Hello from dataapp-painel-de-dados-centro-de-distribuicao-1200!")
+from flask import Flask
 
+from routes.home import home_route
 
-if __name__ == "__main__":
-    main()
+# Inicialização do servidor web
+app = Flask(__name__)
+
+# Registro de telas blueprint
+app.register_blueprint(home_route) # Blueprint da tela principal
+
+# Run do servidor web
+app.run(debug=True)
